@@ -3,6 +3,26 @@ from .models import Attendee
 from django.core.validators import URLValidator
 
 class AttendeeSerializer(serializers.ModelSerializer):
+    firstName = serializers.CharField(source='first_name')
+    lastName = serializers.CharField(source='last_name')
+    dateOfBirth = serializers.DateField(source='date_of_birth', required=False)
+    genderIdentity = serializers.ListField(source='gender_identity', child=serializers.CharField(), required=False)
+    genderOther = serializers.CharField(source='gender_other', required=False)
+    raceEthnicity = serializers.CharField(source='race_ethnicity', required=False)
+    raceOther = serializers.CharField(source='race_other', required=False)
+    levelOfStudy = serializers.CharField(source='level_of_study', required=False)
+    yearLevel = serializers.CharField(source='year_level', required=False)
+    studyOther = serializers.CharField(source='study_other', required=False)
+    fieldOfStudy = serializers.CharField(source='field_of_study', required=False)
+    fieldOther = serializers.CharField(source='field_other', required=False)
+    school = serializers.CharField(source='school', required=False)
+    schoolOther = serializers.CharField(source='school_other', required=False)
+    pantherID = serializers.CharField(source='panther_id', required=False)
+    foodAllergies = serializers.ListField(source='food_allergies', child=serializers.CharField(), required=False)
+    shirtSize = serializers.CharField(source='shirt_size', required=False)
+    codeOfConduct = serializers.BooleanField(source='code_of_conduct', required=False)
+    photographyConsent = serializers.BooleanField(source='photography_consent', required=False)
+
     class Meta:
         model = Attendee
         fields = "__all__"
