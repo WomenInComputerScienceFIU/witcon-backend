@@ -8,7 +8,8 @@ router.register(r'attendees', AttendeeViewSet, basename='attendee')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(router.urls)),  # <-- remove extra 'api/' prefix
+    path('api/', include(router.urls)),  
 ]
+
 
 
