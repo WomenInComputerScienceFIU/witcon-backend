@@ -33,7 +33,10 @@ if not SECRET_KEY:
 # DEBUG = True
 DEBUG = True
 
-ALLOWED_HOSTS = ["52.15.225.107"]
+ALLOWED_HOSTS = [
+    "52.15.225.107",
+    "witcon-frontend.vercel.app"
+]
 
 
 # Application definition
