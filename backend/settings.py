@@ -35,7 +35,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     "52.15.225.107",
-    "witcon-frontend.vercel.app"
+    "witcon-frontend.vercel.app",
+    "witcon-frontend-ozo4a54e0.vercel.app",
 ]
 
 
