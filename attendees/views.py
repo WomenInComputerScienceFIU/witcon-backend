@@ -1,4 +1,3 @@
-# attendees/views.py
 from rest_framework import viewsets, filters
 from rest_framework.parsers import MultiPartParser, FormParser, JSONParser
 from .models import Attendee
@@ -11,6 +10,9 @@ class AttendeeViewSet(viewsets.ModelViewSet):
     filter_backends = [filters.SearchFilter]
     search_fields = ["first_name", "last_name", "email", "school"]
 
+
+router = DefaultRouter()
+router.register(r'attendees', AttendeeViewSet, basename='attendee')  
 
 # from django.shortcuts import render
 # from rest_framework import viewsets, filters
