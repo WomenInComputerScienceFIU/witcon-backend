@@ -4,8 +4,7 @@ from attendees.views import AttendeeViewSet
 from attendees.views import router 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include(router.urls)),  
+    path('', include(router.urls)), 
 ]
 
 
