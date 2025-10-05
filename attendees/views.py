@@ -1,4 +1,5 @@
 from rest_framework import viewsets, filters
+from rest_framework.routers import DefaultRouter
 from rest_framework.parsers import MultiPartParser, FormParser, JSONParser
 from .models import Attendee
 from .serializers import AttendeeSerializer
