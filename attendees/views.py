@@ -12,7 +12,7 @@ class AttendeeViewSet(viewsets.ModelViewSet):
     search_fields = ["first_name", "last_name", "email", "school"]
 
 
-router = DefaultRouter(trailing_slash=False)
+router = DefaultRouter(trailing_slash=True)
 router.register(r'attendees', AttendeeViewSet, basename='attendee')  
 
 
