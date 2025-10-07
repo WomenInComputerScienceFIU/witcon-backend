@@ -39,6 +39,7 @@ ALLOWED_HOSTS = [
     "52.15.225.107",
     "witcon-frontend.vercel.app",
     "witcon-frontend-ozo4a54e0.vercel.app",
+    "witcon.duckdns.org",
 ]
 
 
@@ -76,7 +77,8 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
     "https://witcon-frontend.vercel.app",
-    "https://witcon-frontend-ozo4a54e0.vercel.app"
+    "https://witcon-frontend-ozo4a54e0.vercel.app",
+    "https://witcon.duckdns.org",
 ]
 
 # Media (uploads) config
