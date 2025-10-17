@@ -28,7 +28,7 @@ class AttendeeSerializer(serializers.ModelSerializer):
     raceOther = serializers.CharField(source='race_other', required=False, allow_blank=True)
 
     levelOfStudy = serializers.CharField(source='level_of_study', required=False, allow_blank=True)
-    yearLevel = serializers.CharField(source='year_level', required=False, allow_blank=True)
+    # yearLevel = serializers.CharField(source='year_level', required=False, allow_blank=True)
     studyOther = serializers.CharField(source='study_other', required=False, allow_blank=True)
 
     fieldOfStudy = serializers.CharField(source='field_of_study', required=False, allow_blank=True)
@@ -46,6 +46,8 @@ class AttendeeSerializer(serializers.ModelSerializer):
     website = serializers.CharField(required=False, allow_blank=True)
     discord = serializers.CharField(required=False, allow_blank=True)
 
+    resume = serializers.FileField(required=False, allow_null=True)
+
     foodAllergies = serializers.ListField(
         source='food_allergies',
         child=serializers.CharField(),
@@ -57,7 +59,6 @@ class AttendeeSerializer(serializers.ModelSerializer):
     codeOfConduct = serializers.BooleanField(source='code_of_conduct', required=False)
     photographyConsent = serializers.BooleanField(source='photography_consent', required=False)
 
-    resume = serializers.FileField(required=False, allow_null=True)
 
     class Meta:
         model = Attendee
@@ -70,7 +71,7 @@ class AttendeeSerializer(serializers.ModelSerializer):
             'dateOfBirth', 'country', 'state',
             'genderIdentity', 'genderOther',
             'raceEthnicity', 'raceOther',
-            'levelOfStudy', 'yearLevel', 'studyOther',
+            'levelOfStudy', 'studyOther',
             'fieldOfStudy', 'fieldOther',
             'school', 'schoolOther', 'pantherID',
             'linkedin', 'github', 'website', 'discord',
