@@ -36,10 +36,11 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '127.0.0.1', 
     'localhost',
-    "52.15.225.107",
+    "3.16.147.188",
     "witcon-frontend.vercel.app",
     "witcon-frontend-ozo4a54e0.vercel.app",
     "witcon.duckdns.org",
+    "0.0.0.0"
 ]
 
 
