@@ -87,6 +87,7 @@ class AttendeeSerializer(serializers.ModelSerializer):
     def to_internal_value(self, data):
         # data may be a QueryDict or dict-like; copy to mutate safely
         data = data.copy()
+        return super().to_internal_value(data)
 
         # if frontend sends arrays as JSON strings (common when FormData is used),
         # try to decode them into real lists
