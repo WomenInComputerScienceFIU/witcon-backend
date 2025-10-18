@@ -124,19 +124,21 @@ class AttendeeSerializer(serializers.ModelSerializer):
 
     # ensure confirm email matches email (confirmEmail is write-only)
     def validate(self, attrs):
-        # email will be in attrs (model-name key if source used) OR in initial_data
-        # We declared confirmEmail as a declared field so it will appear in self.initial_data or attrs depending on parse.
-        confirm = self.initial_data.get('confirmEmail') or attrs.pop('confirmEmail', None)
+        confirm = self.initial_data.get('confirmEmail')
         email = attrs.get('email')
         if confirm and email and confirm != email:
             raise serializers.ValidationError({'confirmEmail': 'Emails do not match'})
+        # remove it early
+        attrs.pop('confirmEmail', None)
         return attrs
+
 
     # hash password and create Attendee
     def create(self, validated_data):
-        # validated_data keys are the model field names because of `source=...`
+    # Ensure confirmEmail doesn't sneak in
+        validated_data.pop('confirmEmail', None)
+
         pwd = validated_data.pop('password', None)
-        # confirmEmail removed in validate() above
         attendee = Attendee(**validated_data)
         if pwd:
             import hashlib
